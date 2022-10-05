@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./assets/js/main.js"></script>
     <title>Starbucks Coffee Company</title>
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
+        <div  class="header">
             <ul class="menu-left">
-                    <li class="menu-item">
+                    <li class="menu-item-lg">
                         <img class="menu-item__logo" src="./assets/img/logo.png" alt="Starbucks Logo">
                     </li>
                     <li class="menu-item">MENU</li>
@@ -29,6 +30,26 @@
                     </li>
                     <li class="menu-item menu-item--btn menu-item--btn-join">
                         <a href="#">Join now</a>
+                    </li>
+                    <li class="toggle">
+                        <i id="fa-bars" class="fa-solid fa-bars" onclick="showHideMenu();" style="display:block;"></i>
+                        <i id="fa-mark" class="fa-solid fa-xmark "onclick="showHideMenu();" style="display: none;"></i>
+                        <ul id="toggle-list">
+                            <li><a href="">MENU</a></li>
+                            <li><a href="">REWARDS</a></li>
+                            <li><a href="">GIFT CARDS</a></li>
+                            <hr style="width:100%; margin-bottom: 20px;">
+                            <li>
+                                <a href="#">Sign in</a>
+                            </li>
+                            <li>
+                                <a href="#">Join now</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                Find a store
+                            </li>
+                        </ul>
                     </li>
             </ul>
         </div>  
@@ -124,7 +145,7 @@
             </div>
         </div>
         <div class="link">
-            <ul>
+            <ul class="lg-ul">
                 <p>About Us</p>
                 <li><a href="">Our Company</a></li>
                 <li><a href="">Our Coffee</a></li>
@@ -133,7 +154,7 @@
                 <li><a href="">Investor Relations</a></li>
                 <li><a href="">Customer Service</a></li>
             </ul>
-            <ul>
+            <ul class="lg-ul">
                 <p>Careers</p>
                 <li><a href="">Culture and Values</a></li>
                 <li><a href="">Inclusion, Diversity, and Equity</a></li>
@@ -142,20 +163,20 @@
                 <li><a href="">U.S. Careers</a></li>
                 <li><a href="">International Careers</a></li>
             </ul>
-            <ul>
+            <ul class="lg-ul">
                 <p>Social Impact</p>
                 <li><a href="">People</a></li>
                 <li><a href="">Planet</a></li>
                 <li><a href="">Environmental and Social Impact Reporting</a></li>
             </ul>
-            <ul>
+            <ul class="lg-ul">
                 <p>For Business Partners</p>
                 <li><a href="">Landlord Support Center</a></li>
                 <li><a href="">Suppliers</a></li>
                 <li><a href="">Corporate Gift Card Sales</a></li>
                 <li><a href="">Office and Foodservice Coffee</a></li>
             </ul>
-            <ul>
+            <ul class="lg-ul">
                 <p>Order and Pick up</p>
                 <li><a href="">Order on the App</a></li>
                 <li><a href="">Order on the Web</a></li>
@@ -166,6 +187,85 @@
             <!--<ul>
                 Serve Css 
             </ul>-->
+            <ul class="sm-ul">
+                <div class="rwd-ul" onclick="showHideLink1();">
+                    <li>About</li>
+                    <li id="first-down" ><i class="fa-solid fa-angle-down" ></i></li>
+                    <li id="first-up" style="display:none;"><i class="fa-solid fa-angle-up" ></i></li>
+                </div>
+                <div>
+                    <ul id="first-ul">
+                        <li><a href="">Our Company</a></li>
+                        <li><a href="">Our Coffee</a></li>
+                        <li><a href="">Stories and News</a></li>
+                        <li><a href="">Starbucks Archive</a></li>
+                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="">Customer Service</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <ul class="sm-ul">
+                <div class="rwd-ul" onclick="showHideLink2();">
+                    <li>Careers</li>
+                    <li id="second-down" ><i class="fa-solid fa-angle-down" ></i></li>
+                    <li id="second-up" style="display:none;" ><i class="fa-solid fa-angle-up"></i></li>
+                </div>
+                <div>
+                    <ul id="second-ul">
+                        <li><a href="">Culture and Values</a></li>
+                        <li><a href="">Inclusion, Diversity, and Equity</a></li>
+                        <li><a href="">College Achievement Plan</a></li>
+                        <li><a href="">Alumni Community</a></li>
+                        <li><a href="">U.S. Careers</a></li>
+                        <li><a href="">International Careers</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <ul class="sm-ul">
+                <div class="rwd-ul" onclick="showHideLink3();">
+                    <li>Social Impact</li>
+                    <li id="third-down" ><i class="fa-solid fa-angle-down"></i></li>
+                    <li id="third-up" style="display:none;"><i class="fa-solid fa-angle-up"></i></li>
+                </div>
+                <div>
+                    <ul id="third-ul">
+                        <li><a href="">People</a></li>
+                        <li><a href="">Planet</a></li>
+                        <li><a href="">Environmental and Social Impact Reporting</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <ul class="sm-ul">
+                <div class="rwd-ul" onclick="showHideLink4();">
+                    <li>For Business Partners</li>
+                    <li id="fourth-down" ><i class="fa-solid fa-angle-down"></i></li>
+                    <li id="fourth-up" style="display:none;"><i class="fa-solid fa-angle-up"></i></li>
+                </div>
+                <div>
+                    <ul id="fourth-ul">
+                        <li><a href="">Landlord Support Center</a></li>
+                        <li><a href="">Suppliers</a></li>
+                        <li><a href="">Corporate Gift Card Sales</a></li>
+                        <li><a href="">Office and Foodservice Coffee</a></li>
+                    </ul>
+                </div>
+            </ul>
+            <ul class="sm-ul">
+                <div class="rwd-ul" onclick="showHideLink5();">
+                    <li>Order and Pick up</li>
+                    <li id="fifth-down"><i class="fa-solid fa-angle-down"></i></li>
+                    <li id="fifth-up" style="display:none;"><i class="fa-solid fa-angle-up"></i></li>
+                </div>
+                <div>
+                    <ul id ="fifth-ul">
+                        <li><a href="">Order on the App</a></li>
+                        <li><a href="">Order on the Web</a></li>
+                        <li><a href="">Delivery</a></li>
+                        <li><a href="">Order and Pickup Options</a></li>
+                        <li><a href="">Explore and Find Coffee for Home</a></li>
+                    </ul>
+                </div>
+            </ul>
         </div>
         <hr>
         <div class="footer">
